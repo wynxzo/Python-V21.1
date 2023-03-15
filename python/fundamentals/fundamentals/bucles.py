@@ -1,8 +1,3 @@
-lst = list (range(0,151))
-print (lst)
-
-lst0 = list (range(0,1001,5))
-print(lst0)
 
 for i in range(151):
     print(i)
@@ -24,7 +19,7 @@ for i in range(101):
 
 
 suma=0
-for i in range(0,50):
+for i in range(0,500000):
     if i %2 ==0:
         print(i)
         suma = suma +1
