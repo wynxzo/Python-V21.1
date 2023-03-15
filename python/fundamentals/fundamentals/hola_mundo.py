@@ -1,7 +1,7 @@
 import random
 
 print('HOLLAAAAAAA!')
-print('BIENVENIDO A PYTHONNNNNNNN')
+print('isidora poblete')
 
 print('This is a loop printing 5 times')
 for x in range(1, 6):
