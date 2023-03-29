@@ -1,40 +1,36 @@
 class CuentaBancaria:
-    cuentas=[]
-    def __init__(self, tasa_interes, balance): 
-        self.tasa_interes = tasa_interes
-        self.balance = balance
-        CuentaBancaria.cuentas.append(self)
+    def __init__(self, cuentas, tasa_interés, balance): 
+        self.cuentas = cuentas
+        self.balance_mount = balance
+        self.intereses = tasa_interés
+        self.tasa_interés= tasa_interés
 
-    def depósito(self, amount):
-        self.balance +- amount
+    def deposito(self, amount):
+        self.balance_mount += amount 
         return self
     
-    def retiro(self, amount):
-        if(self.balance - amount) >= 0:
-            self.balance -= amount
-        else:
-            print(1000)
-            self.balance -= 5
+    def retiro(self, other_user):
+        self.balance_mount -= other_user
         return self
-    
-    def mostrar_info_cuenta(self):
-        return (f"{self.balance}")
+
+    def mostrar_info(self):
+        print(f"{self.cuentas} Balance: {self.balance_mount}")
+        return self
     
     def generar_interés(self):
-        if self.balance > 0:
-            self.balance += (self.balance * self.tasa_interés)
+        print(f"{self.cuentas} Balance: {self.balance_mount}")
+        self.balance_mount += self.balance_mount * self.intereses
         return self
     
-    def imprime(self):
-        print(f"{self.tasa_interes}  monto {self.balance}")
-        return self
+cuentas="wynxzo"
+balance = 0
+tasa_interés = 0.5
+wynxzo = CuentaBancaria(cuentas,tasa_interés ,balance)
 
-i1= CuentaBancaria (0.2,5000) 
-    
-i1.depósito(12)
+cuentas="yourmom"
+balance=1000
+tasa_interés=0.7
+yourmom= CuentaBancaria(cuentas, tasa_interés,balance)
 
-i1.retiro(12)
-
-i1.mostrar_info_cuenta()
-
-i1.imprime()
+yourmom.retiro(100).deposito(200.5).generar_interés().retiro(1500).mostrar_info()
+wynxzo.deposito(300).deposito(14.5).generar_interés().mostrar_info()
