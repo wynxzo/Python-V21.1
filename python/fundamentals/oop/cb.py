@@ -1,8 +1,7 @@
 class CuentaBancaria:
     cuentas=[]
-    def __init__(self, tasa_interés, balance): 
-        #(tasa_interés: any)  none:
-        self.tasa_interés = tasa_interés
+    def __init__(self, tasa_interes, balance): 
+        self.tasa_interes = tasa_interes
         self.balance = balance
         CuentaBancaria.cuentas.append(self)
 
@@ -23,21 +22,19 @@ class CuentaBancaria:
     
     def generar_interés(self):
         if self.balance > 0:
-            self.balance += (self.balance, self.tasa_interés)
+            self.balance += (self.balance * self.tasa_interés)
         return self
     
     def imprime(self):
-        print(f"{self.tasa_interés}  monto {self.balance}")
+        print(f"{self.tasa_interes}  monto {self.balance}")
         return self
 
-e1= CuentaBancaria (0.2,1000) 
+i1= CuentaBancaria (0.2,5000) 
     
-e1.depósito(12)
+i1.depósito(12)
 
-e1.retiro(12)
+i1.retiro(12)
 
-e1.mostrar_info_cuenta()
+i1.mostrar_info_cuenta()
 
-e1.generar_interés()
-
-e1.imprime()
+i1.imprime()
