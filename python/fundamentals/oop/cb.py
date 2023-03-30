@@ -17,10 +17,6 @@ class CuentaBancaria:
         print(f"{self.cuentas} Balance: {self.balance_mount}")
         return self
     
-    def generar_interés(self):
-        print(f"{self.cuentas} Balance: {self.balance_mount}")
-        self.balance_mount += self.balance_mount * self.intereses
-        return self
     
 cuentas="wynxzo"
 balance = 0
@@ -32,5 +28,5 @@ balance=1000
 tasa_interés=0.7
 yourmom= CuentaBancaria(cuentas, tasa_interés,balance)
 
-yourmom.retiro(100).deposito(200.5).generar_interés().retiro(1500).mostrar_info()
-wynxzo.deposito(300).deposito(14.5).generar_interés().mostrar_info()
+yourmom.retiro(100).deposito(200.5).retiro(1500).mostrar_info()
+wynxzo.deposito(300).deposito(14.5).mostrar_info()
