@@ -1,41 +1,63 @@
-class ninja:
-    def __init__(self, nombre, apellido, mascotas, premio, comida_mascota) -> None:
-        self.nombre = nombre
-        self.apellido = apellido
-        self.mascotas = mascotas
-        self.premio = premio
-        self.comida_mascota = comida_mascota
-        pass 
-
-    def caminar(self, mascota)
-        self.other_user = mascota
-
-
-    def alimentar(self,other_user)
-        
-
-
-    def bañar(self,other_user)
-        
-
 class mascota:
-    def __init__(self, name, tipo, golosinas) -> None:
+    def __init__(self, name , tipo, golosinas, sonido):
         self.name = name
         self.tipo = tipo
-        self.golosinas = golosinas
-        pass
+        self.tricks = golosinas
+        self.health = 100
+        self.energy = 50
+        self.sonido = sonido
 
-    
-    def dormir(self, ninja)
-        self.other_user = ninja
+    def dormir(self):
+        self.energia += 25
+        return self
+
+    def comer(self):
+        self.energia += 5
+        self.salud += 10
+        return self
+
+    def play(self):
+        self.salud += 5
+        self.energia -= 15
+        return self
+
+    def sonido(self):
+        print(self.sonido)
 
 
-    def comer(self,other_user)
-        
 
+class Ninja:
+    def __init__(self, name, apellido , premios, comida_mascota, mascota):
+        self.name = name
+        self.apellido = apellido
+        self.premios = premios
+        self.comida_mascota = comida_mascota
+        self.mascota = mascota
 
-    def jugar(self,other_user)
-        
-        
-    def sonido(self,other_user)
-        self.other_user = other_user
+    def caminar(self):
+        self.mascota.jugar()
+        return self
+
+    def alimentar(self):
+
+        if len(self.comida_mascota) > 0:
+            comida = self.comida_mascota.pop()
+            print(f"Feeding {self.mascota.name} {comida}!")
+            self.mascota.comer()
+        else:
+            print("Oh no, necesitas más comida para tu mascota")
+        return self
+
+    def respirar (self):
+        self.mascota.sonido()
+
+premios = ['galletas','pan',"manzanas"]
+comida_mascota= ['cereal','carne cocida']
+
+tikki= mascota("Srta. tikki","chinita",['tikki en cosas','es invisible'],"Hola Hola")
+
+marinette = Ninja("marinette","Dupain-Cheng",premios,comida_mascota, tikki)
+
+marinette.comer();
+marinette.comer();
+marinette.comer();
